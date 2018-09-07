@@ -7,7 +7,11 @@ Solve the problem of limited open hours of Union Collegiate Store.
 Promote school brands.
 
 ## Progress
-- [] Front end build
-- [] Back end build
-- [] Database build
-- [] VR build
+- [ ] Front end build
+- [ ] Back end build
+- [ ] Database build
+- [ ] VR build
+
+## Link
+[Rensselaer Polytechnic Institute](http://rpi.edu/)
+[Rensselaer Center for Open Source](https://rcos.io/)
