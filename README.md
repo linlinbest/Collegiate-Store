@@ -1,4 +1,4 @@
-# Collegiate-Store-
+# Collegiate-Store
 -----------
 Navigate RPI collegiate store and view products through 360° display.
 Enable students to open textbooks and explore other stationary.
