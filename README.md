@@ -13,5 +13,6 @@ Promote school brands.
 - [ ] VR build
 
 ## Link
-[Rensselaer Polytechnic Institute](http://rpi.edu/)
-[Rensselaer Center for Open Source](https://rcos.io/)
+
+- [Rensselaer Polytechnic Institute](http://rpi.edu/)
+- [Rensselaer Center for Open Source](https://rcos.io/)
