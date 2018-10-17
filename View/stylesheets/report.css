@@ -3,6 +3,12 @@ body {
 	margin: 0 auto;
 }
 
+.container {
+	max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+
 .carousel-inner .item img {
 	width: 100%;
 	height: 300px;
