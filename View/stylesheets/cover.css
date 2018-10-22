@@ -30,6 +30,7 @@ body {
   background-color: #333;
 }
 
+html,
 body {
   display: -ms-flexbox;
   display: flex;
