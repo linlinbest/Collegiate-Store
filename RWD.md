@@ -1,5 +1,5 @@
 ```
-
+@media ( min-device-width:1024px ) and ( max-width:989px )，screen and ( max-device-width:480px )，( max-device-width:480px ) and ( orientation:landscape )，( min-device-width:480px ) and ( max-device-width:1024px ) and ( orientation:portrait ) {srules}
 ```
 ------
 ```
