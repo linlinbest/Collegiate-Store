@@ -108,3 +108,15 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+/*
+ * Modal
+ */
+h5,
+contact {
+  color: black;
+  text-shadow: 0;
+}
+contact {
+  display: block;
+}
