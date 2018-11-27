@@ -3,7 +3,7 @@ $(document).ready(function() {
     if (localStorage.getItem("location") === null) {
       localStorage.setItem("location", "init");
     }
-    window.open("../Controller/index.controller.php?location="+localStorage.getItem("location"));
+    // window.open("../Controller/index.controller.php?location="+localStorage.getItem("location"));
   });
 
   if (localStorage.getItem("position") != null) {
@@ -26,8 +26,6 @@ $(document).ready(function() {
     localStorage.setItem("position", num);
 
     $('#myblock').attr('src', '../Data/'+localStorage.getItem("position")+'.jpg')
-
-    alert(localStorage.getItem("position"))
   })
 
   // DEBUG MODE only
