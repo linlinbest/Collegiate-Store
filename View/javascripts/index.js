@@ -5,4 +5,8 @@ $(document).ready(function() {
     }
     window.open("../Controller/index.controller.php?location="+localStorage.getItem("location"));
   });
+
+  $('#myblock').draggable({
+    appendTo: "#canvas"
+  });
 });
