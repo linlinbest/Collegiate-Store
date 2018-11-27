@@ -1,7 +1,49 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+}
+
 #mycanvas {
   /* TODO set height and width appropriate */
   margin: auto;
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+#myblock{
+  height: 100%;
+  margin-left: -50%;
+  z-index:1;
+}
+
+.arrow{
+  height: 4em;
+  width: 4em;
+}
+
+.round {
+  position: absolute;
+  border-radius: 50%;
+  margin-left: 48%;
+  margin-top: 5%;
+  z-index:999;
+}
+
+.transparent {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.transparent:hover {
+  background-color: rgba(0,0,0,0.5);
 }
