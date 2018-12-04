@@ -1,1 +1,330 @@
 
+# -*- coding:utf8 -*-
+import sys
+from operation import *
+     
+#===============================================================================
+#只是用来print register 
+def print_dict(regis):
+    
+    num_nl = 0 
+    
+    regis_key = list(regis.keys()) 
+    regis_key.sort()
+    
+    for itr in regis_key:
+        line = ""
+        if(num_nl ==4):
+            print()
+            num_nl =0 
+        line += itr+" = "+str(regis[itr])
+        print(line,end = "")
+        if(num_nl != 3):
+            print((20-len(line))*" ",end= "")
+        num_nl+=1
+    print()
+
+#===============================================================================
+#一个test时候用的 funct 用来简化 print answer：
+# ie. IF- 0 ID- 1 EX- 2 MEM- 3 WB-4
+def debug_check_line(lst):
+    for n in range(0,len(lst)):
+        print(lst[n].ez_print())
+#===============================================================================
+
+#如果是纯数字， 那么就不管了
+#如果是类似于0($t0)这种就变换成 $t0 
+def clean_str(string ):
+    changed = ""
+    
+    if(string.isdigit() ): #if it is digit 
+        changed = string 
+    elif(string[0]=="-" and string[1:].isdigit() ): # if it is negative 
+        changed = string 
+    elif(string == "$zero"): # if it is zero 
+        changed = string 
+    else: #ok it is a string looks like 0($t0)
+        front = string.find("(")
+        after = string.find(")")
+        if(front != -1):
+            changed = string[front+1:after]
+        else:
+            changed = string 
+    
+    return changed 
+    
+
+#===============================================================================
+
+#判断是否有dependency， 如果有判断有多少bubble 
+def check_stall(operating, n,forwarding):
+    
+    assert  not operating[n].is_label(), "there is an illegal value wants to check_stall"
+    
+    former = max(n-2, 0)
+    wasted_ins = 0 
+    bubble = 0 
+    
+    for tmp in range(former, n): #if there is nop or label in front the instruction
+        if(operating[tmp].is_nop() or operating[tmp].is_label() ):
+            wasted_ins +=1
+    
+    former = max(0, former- wasted_ins) # former must >0
+    
+    if(operating[n].stand != 1): #it is at the location ID\EXE 
+        return 0;                #if there is no stall, we will get to EXE
+    
+    check_a = ""
+    check_b = ""
+    
+    #TODO: special case  $zero 0($s0) 49 
+    if(operating[n].is_judge() ):
+        check_a = clean_str(operating[n].rd) 
+        check_b = clean_str(operating[n].rs)
+    else:
+        check_a = clean_str(operating[n].rs)
+        check_b = clean_str(operating[n].rt)
+    
+    #calculate how many bubbles would be entered ;
+    #if it is finished or judge(will not change the value for register)
+    #if is nop continue 
+    #if we have forwarding and the stand is after EXE(2) it can be forwarded 
+    #calculate the bubble 5- stand : because have WB it would be seriously be written into the register, after 5, it is finished 
+    for tmp in range(former, n):
+        bre = operating[tmp]
+        if(bre.finished() or bre.is_nop() or bre.is_judge()):
+            continue
+        if(bre.rd == check_a or bre.rd == check_b):
+            if(bre.stand >= 2 and forwarding):
+                continue 
+        
+            if(bubble != 0):
+                bubble -=1 
+            bubble += 5- bre.stand
+        
+    return bubble    
+        
+#if there is bubble we have to add nop to it 
+#and print the nop 
+def insert_nop(operating,n,stall_int,clock): 
+    model = operating[n]
+    for tmp in range(0,stall_int):
+        nop = model.clone()
+        nop.sign = "nop" # the sign must be nop
+        nop.line = "nop"
+        operating.insert(n,nop)
+        operating[n].stand +=1 
+        operating[n].answer[clock] = -2
+        print(operating[n])
+
+
+#===============================================================================
+#if all_finish we must stop the loop 
+#probelm:
+#what happened if there is no forwarding, and we meet a judgement 
+#it may cause the problem that if we wait the branch judgement to end
+#after it ends, will it directly end the loop 
+def all_finish(operating):
+    for n in range(0,len(operating) ):
+        if(operating[n].stand < 4):
+            return False 
+    return True 
+    
+#===============================================================================
+if __name__ == "__main__":
+    #input check 
+    #if len(sys.argv)  != 3:
+    #    print("fail to input")
+    #    sys.eixt(1) 
+        
+    #like cpp the argv[0] is the file name 
+    #argv[1] - the command 
+    #argv[2] - the output file 
+    
+    #print ("the first argv", sys.argv[0])
+    #print ("the second argv", sys.argv[1])
+    #print ("the third argv",sys.argv[2])
+    
+    f = "ht_1.s"
+    op = "F" #no matter it is forwarding or not, it would still use the predicted 
+    
+    #the branch would not taken 
+    file = open(f,"r") #we need close the file later 
+    
+    #dictionary_set up && the list of operation to set up 
+    register = dict() #register is the dictionary for the $s0- $s7 and $t0 - $t9
+    lst_op = list() #all the instruction would be entered into list first 
+                
+   
+    forwarding = False
+    if(op == "F"):
+        forwarding = True
+    tmp=0
+    
+    #initialize the register both for the save and temparete 
+    while tmp < 10:
+        str_tmp = ""
+        if tmp < 8:
+            str_tmp = "$s"+ str(tmp)
+            register[str_tmp] = 0
+        str_tmp = "$t"+ str(tmp)
+        register[str_tmp] = 0
+        tmp+=1
+    
+    #print_dict(register) 
+    
+    
+    #for test::
+    #register["$s0"] =4 
+    #register["$s5"] = 10
+    #register["$s3"] = -9
+    
+    count =0
+   
+    #set up the instruction 
+    while True:
+        line = file.readline()
+        if not line:
+            break
+        print(line,end="") # line itslef has \n so we cannot have another print 
+        
+        line = line.replace("\n","")    
+        list_line = line.split(" ")
+        
+        #start to load the value 
+        sign = list_line[0]
+        rd = ""
+        rt = ""
+        rs = ""
+        if(sign!=line): # if sign == line so it would become the label 
+            list_line = list_line[1].split(",")
+        
+            rd = list_line[0]
+            rs = list_line[1]
+        
+            if(len(list_line)==3):
+                rt = list_line[2]
+        else:
+            sign = "branch"
+            
+        lst_op.append( operation(line,sign,rd,rs,rt,count) )
+        
+        if(sign != "branch"):  #problem: count may be kind of uselss 
+            count+=1
+    
+    debug_check_line(lst_op)  
+    
+    operating = list(); #only the operating line would operate->IF->ID->EXE
+    
+    
+    print("START OF SIMULATION ",end ="")
+    if(forwarding):
+        print("(forwarding)")
+    else:
+        print("(no forwarding)")
+    
+    
+    cnt = 0  # to count which instruction would be operated for the op_list 
+    stall = False 
+    stall_loc = -1;
+    
+    title = "CPU Cycles ===>     1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16"
+    
+    for clock in range(0,14): 
+       
+        #if (clock == 13):
+            ##print("fuck you ===>", str(cnt))
+        
+        #first load the instruction to operating
+        #only one operating can be loaded but not label 
+        count = 0
+        while(cnt< len(lst_op) and count != 1):
+            if(len(operating) != 0):                
+                tmp = operating[len(operating)-1]
+                    
+                if( not forwarding and tmp.is_judge() and tmp.stand <4):
+                    break
+                
+                
+            if(lst_op[cnt].is_label() ): #if it is the label we can not load it 
+                cnt+=1 
+                continue             
+                
+                
+            #if(not lst_op[cnt].is_judge() ):
+            if(cnt < len(lst_op) and not lst_op[cnt].is_label() ):
+                operating.append(lst_op[cnt].clone() )
+                count += 1  
+            #else:
+            #    operating.append(lst_op[cnt].branch_clone() )
+              
+                            
+            cnt+= 1 
+        
+        n = 0 
+        
+       
+        if(all_finish(operating) ): #if all operating has finished->end the loop 
+            break 
+        
+        print(clock,"-"*81)
+        print(title)
+        while(n < len(operating) ):
+            #if(operating[n].is_judge() ):
+            #    print("==================================================>",str(operating[n].guess)," and ",str(operating[n].value_rt))
+            if(not operating[n].finished()):
+                if(stall): #if there is a stall 
+                    if(n < stall_loc): #it is before the stall loc just keep the same 
+                        cnt =operating[n].next_stand(clock,register,operating,lst_op,n,forwarding,cnt)
+                    elif (n == stall_loc): #if it is where the stall occured check angain 
+                        
+                        stall_int = check_stall(operating, n,forwarding)
+                        
+                        if(stall_int==0): #if the stall is finished, we can add go to next instruction 
+                            cnt = operating[n].next_stand(clock,register,operating,lst_op,n,forwarding,cnt)
+                            stall = False
+                            stall_loc = -10 
+                        else: #if the stall is still here, sorry about that 
+                            operating[n].keep_stand(clock)
+                    else: #if it is after the stall we just keep the same 
+                        operating[n].keep_stand(clock)
+                else: #if there is no stall 
+                    
+                    stall_int = check_stall(operating,n,forwarding)
+                    
+                    if(stall_int ==0): #there is no stall here still 
+                        stall =False;
+                        cnt =operating[n].next_stand(clock,register,operating,lst_op,n,forwarding,cnt)
+                        
+                    else: #if there has a stall, we have insert the nop and keep the step same 
+                        stall = True 
+                        
+                        insert_nop(operating,n,stall_int,clock)
+                        n += stall_int 
+                        operating[n].keep_stand(clock)
+                        stall_loc = n 
+                
+                    
+            #if(not lst_op[n].finished() ): end---------------------------------
+            if(operating[n].WB()):
+                cnt = operating[n].write_back(operating,lst_op,n,register,cnt,forwarding)
+                
+            #test 
+           
+            #print("==========================>",str(lst_op[3].guess))
+            
+            print(operating[n])
+            n+=1
+        #for operating end------------------------------------------------------
+        print_dict(register)
+        
+        
+    #for clock------------------------------------------------------------------
+    print("-"*81)
+    print("END OF SIMULATION")
+    file.close()
+    
+        
+    
+    
+    
