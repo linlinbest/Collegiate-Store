@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <style type="text/css" id="night-mode-pro-style"></style>
-  <link type="text/css" rel="stylesheet" id="night-mode-pro-link">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Problems Report</title>
-    <link rel="stylesheet" href="../View/frameworks/bootstrap/css/bootstrap.min.css" type="text/css" />
-    <link href="stylesheets/cover.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/report.css" type="text/css"/>
-    <script src="../View/javascripts/report.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <div id="header"></div>
-    <div class="container">
-      <header class="masthead mb-auto text-center">
-        <div class="inner">
-          <h3 class="masthead-brand">Colleigate Store+</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link active" href="#">Report</a>
+ef="#">Report</a>
             <a class="nav-link" href="" data-toggle="modal" data-target="#contact">Contact</a>
           </nav>
         </div>
@@ -29,7 +9,34 @@
       </div>
 
       <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
+lass="col-md-8 order-md-1">
+          <h4 class="mb-3">Information</h4>
+          <form class="needs-validation" novalidate="" onsubmit="confirmInput()" action = "index.html" method = "POST">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Enter your RPI username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2"></span>
+              </div>
+            </div>
+
+         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span>Why is your feedback so important to us!</span>
             <span class="badge badge-secondary badge-pill">3</span>
@@ -59,35 +66,397 @@
               </div>
             </li>
           </ul>
-        </div>
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Information</h4>
-          <form class="needs-validation" novalidate="" onsubmit="confirmInput()" action = "index.html" method = "POST">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
               </div>
-            </div>
-
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Enter your RPI username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
               </div>
-            </div>
-
-            
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Why is your feedback so important to us!</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is there all the time</h6>
+                <!-- <small class="text-muted">Every time we speak or listen to another person, in our tone of voice, in the words we use, in the silences which we allow, we communicate feedback.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is just another word for effective listening</h6>
+                <!-- <small class="text-muted">Feedback gives people feel that they have been understood, and they need to feel that what they said had some form of value.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Feedback is an opportunity to motivate</h6>
+                <!-- <small class="text-muted">Positive feedback is another word for praise.</small> -->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">We need your feedback!</h6>
+              </div>
+            </li>
+          </ul>
+        </div>           
 
             <!-- <div class="mb-3">
               <label for="address">Address</label>
