@@ -14,8 +14,8 @@ $(document).ready(function() {
     axis: 'x',
     drag: function( event, ui ) {
     // Setting limits
-    if (ui.position.left > 800) {
-      ui.position.left = 800;
+    if (ui.position.left > 700) {
+      ui.position.left = 700;
     }
     if (ui.position.left < -1000) {
       ui.position.left = -1000
