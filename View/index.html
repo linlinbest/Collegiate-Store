@@ -1,103 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" type="text/css" href="frameworks/bootstrap/css/bootstrap.min.css" />
-	<script type="text/javascript" src="javascripts/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="frameworks/bootstrap/js/bootstrap.min.js"></script>>
-	<title>Colleigate Store+</title>
-</head>
-<body>
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Colleigate Store+</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.bkstr.com/rpistore/home">Colleigate book store original sidelink</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Report</a>
-        </li>
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+  <style type="text/css" id="night-mode-pro-style"></style>
+  <link type="text/css" rel="stylesheet" id="night-mode-pro-link">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Colleigate Store+</title>
+
+    <link rel="stylesheet" type="text/css" href="frameworks/bootstrap/css/bootstrap.min.css" />
+    <link href="stylesheets/cover.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column hidden">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Colleigate Store+</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="report.html">Report</a>
+            <a class="nav-link" href="" data-toggle="modal" data-target="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">360 Mode</h1>
+        <p class="lead">360 Mode is a mode that provides panoramic views from positions along all aisles in the collegiate store in RPI.</p>
+        <p class="lead">
+          <a class="btn btn-lg btn-secondary enter" href="view.html">Enter</a>
+        </p>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="mastfoot mt-auto">
+        <p>Colleigate Store+ is an open source platform on <a href="https://rcos.io/">RCOS</a>.<br/>We love feedback! <a href="https://github.com/VRHSGroup/Collegiate-Store/">Github</a></p>
+      </footer>
+
+      <!-- Modal -->
+      <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactLabel">Contact</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <contact>
+                <a href="https://github.com/shikanchen"><font color="#000000">Shikan Chen</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/timli421"><font color="#000000">Tianyi Li</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/linlinbest"><font color="#000000">Zhuohao Lin</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/Darkknight6940"><font color="#000000">Sitong Liu</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/HelenWu11"><font color="#000000">Ruoyan Wu</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/jasonht233"><font color="#000000">Haotian Zhang</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/MadaoIsMyBrother"><font color="#000000">Zejie Zhou</font></a>
+              </contact>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </nav>
-</header>
 
-<main role="main">
-  <div class="container marketing">
-    <div class="row">
-      <div class="col-lg-4">
-        <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
-        <h2>New arrival</h2>
-        <p>[API REQUIRED]</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-      </div>
-      <div class="col-lg-4">
-        <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
-        <h2>Favorites</h2>
-        <p>[API REQUIRED]</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-      </div>
-      <div class="col-lg-4">
-        <img class="rounded-circle" src="" alt="Generic placeholder image" width="140" height="140">
-        <h2>Sale&Clearance</h2>
-        <p>[API REQUIRED]</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-      </div>
-    </div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="javascripts/jquery-3.3.1.min.js"></script>
+    <script src="javascripts/popper.min.js"></script>
+    <script type="text/javascript" src="frameworks/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/index.js"></script>
 
-    <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">books<span class="text-muted">title 2</span></h2>
-        <p>[API REQUIRED]</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="tmp/Pikachu1.png" data-holder-rendered="true">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">apparel&accessories<span class="text-muted">title 2</span></h2>
-        <p class="lead">[API REQUIRED]</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" alt="500x500" src="tmp/Pikachu2.png" data-holder-rendered="true" style="width: 500px; height: 500px;">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">gifts&collectibles<span class="text-muted">title 3</span></h2>
-        <p class="lead">[API REQUIRED]</p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="tmp/Pikachu3.png" data-holder-rendered="true" style="width: 500px; height: 500px;">
-      </div>
-    </div>
-    <hr class="featurette-divider">
-  </div>
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>Colleigate Store+ is an open source platform on <a href="https://rcos.io/">RCOS</a>. We love feedback! <a href="https://github.com/VRHSGroup/Collegiate-Store/">Github</a></p>
-  </footer>
-</main>
-</body>
+  </body>
 </html>
