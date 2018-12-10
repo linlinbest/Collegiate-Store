@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Collegiate Store</title>
+		<!--<link rel="stylesheet" type="text/css" href="css/reset.css"/>-->
+		<!--<link rel="stylesheet" href="tmp/-2.css" />-->
+
+		<style type="text/css">
+			#container{
+			width:1000px;
+			background-color:gray;
+			}
+			#header{
+			height:240px;
+			background-image: url("tmp/IMage.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-color: grey;
+			z-index: 1;
+			}
+			#main{
+			height: 600px;
+			background: darkgoldenrod;
+			}
+			#footer{
+			height: 120px;
+			background: yellowgreen;
+			background-image: url("tmp/book1.jpg");
+			background-repeat: repeat;
+			}
+			#main_left{
+			float: left;
+			background: yellow;
+			background-image: url("tmp/books2.jpg");
+			background-repeat: repeat;
+			width: 700px;
+			height: 100%;
+			}
+			#main_right{
+			float: right;
+			background: pink;
+			background-image: url("tmp/laptop2.jpg");
+			background-repeat: repeat;
+			width: 300px;
+			height:100% ;
+			}
+			#nav li {
+			list-style-type: none;
+			float: left;
+			width: 200px;
+			margin-right: 1px;
+			font-size: 20px;
+ 			}
+ 			#nav a {
+ 			text-decoration: none;
+ 			color: yellow;
+ 			}
+ 			#logo {
+ 				float:center;
+ 				margin: 5px 0 0 10px;
+ 				z-index: 0;
+ 			}
+
+		</style>
+	</head>
+
+<body>
+	<center>
+	<div id="container">
+		<div id="header">
+			<!--<img src="tmp/book1.jpg" alt="" id="logo"/>-->
+			<ul id="nav">
+				<li><a href="#">nav1</a></li>
+				<li><a href="#">nav2</a></li>
+				<li><a href="#">nav3</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div id="main_left"></div>
+   		<div id="main_right"></div>
+		</div>
+		<div id="footer"></div>
+	</div>
+	</center>
+
+</body>
+</html>
