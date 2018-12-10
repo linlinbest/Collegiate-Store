@@ -1,3 +1,4 @@
 <?php
- $_GET['location']
+
+	return Data;
 ?>

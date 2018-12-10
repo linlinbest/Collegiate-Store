@@ -15,10 +15,10 @@
     <div class="container">
       <header class="masthead mb-auto text-center">
         <div class="inner">
-          <h3 class="masthead-brand">Colleigate Store+</h3>
+          <h3 class="masthead-brand">Collegiate Store+</h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="report.html">Report</a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="#">Report</a>
             <a class="nav-link" href="" data-toggle="modal" data-target="#contact">Contact</a>
           </nav>
         </div>
@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Information</h4>
-          <form class="needs-validation" novalidate="">
+          <form class="needs-validation" novalidate="" onsubmit="confirmInput()" action = "index.html" method = "POST">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -80,24 +80,20 @@
               </div>
             </div>
 
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Enter your RPI username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="mb-3">
+              <label for="email"> Email </label>
+              <input type="text" class="form-control" placeholder="Enter your email address" aria-label="Recipient's username" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">@rpi.edu</span>
+                <!-- <span class="input-group-text" id="basic-addon2">@rpi.edu</span> -->
               </div>
             </div>
 
             <div class="mb-3">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+              <label for="address">Browser name<span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address" placeholder="Google, Firefox, etc." required="">
               <div class="invalid-feedback">
-                Please enter your shipping address.
+                Please enter the browser you are using.
               </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
             </div>
 
             <div class="mb-3">
@@ -106,14 +102,57 @@
             </div>
             <hr class="mb-4">
 
+            <!-- <div class="mb-3"> -->
+              <!-- <label for="attachments">Attachment <span class="text-muted">(Optional)</span></label> -->
+              <!-- <input type="file" name="attachFile" value=""> -->
+            <!-- </div> -->
+
             <button class="btn btn-primary btn-lg btn-block" type="submit">Submit report</button>
           </form>
         </div>
       </div>
       <footer class="mastfoot">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>Colleigate Store+ is an open source platform on <a href="https://rcos.io/">RCOS</a>. We love feedback! <a href="https://github.com/VRHSGroup/Collegiate-Store/">Github</a></p>
+        <p>Collegiate Store+ is an open source platform on <a href="https://rcos.io/">RCOS</a>. We love feedback! <a href="https://github.com/VRHSGroup/Collegiate-Store/">Github</a></p>
       </footer>
+
+      <!-- Modal -->
+      <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactLabel">Contact</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <contact>
+                <a href="https://github.com/shikanchen"><font color="#000000">Shikan Chen</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/timli421"><font color="#000000">Tianyi Li</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/linlinbest"><font color="#000000">Zhuohao Lin</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/Darkknight6940"><font color="#000000">Sitong Liu</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/HelenWu11"><font color="#000000">Ruoyan Wu</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/jasonht233"><font color="#000000">Haotian Zhang</font></a>
+              </contact>
+              <contact>
+                <a href="https://github.com/MadaoIsMyBrother"><font color="#000000">Zejie Zhou</font></a>
+              </contact>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <script src="javascripts/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -140,5 +179,12 @@
         }, false);
       })();
     </script>
+    <script>
+      function confirmInput() {
+          firstName = document.forms[0].firstName.value;
+          alert("Congratulations! " + firstName + ", you successfully submit your suggestion!");
+    }
+    </script>
+
 </body>
 </html>
